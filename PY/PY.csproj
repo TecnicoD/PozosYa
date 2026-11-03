@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{96465AE8-CC75-45E3-9DF5-04FC445A2AFF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PY</RootNamespace>
+    <AssemblyName>PY</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GMap.NET.Core, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms, Version=1.7.5.0, Culture=neutral, PublicKeyToken=b85b9027b614afef, processorArchitecture=MSIL">
+      <HintPath>..\packages\GMap.NET.WindowsForms.1.7.5\lib\net40\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.13, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.13\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=10.0.0.13, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.10.0.13\lib\net462\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=10.0.0.13, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.10.0.13\lib\net462\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.EnvironmentVariables, Version=10.0.0.13, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.EnvironmentVariables.10.0.13\lib\net462\Microsoft.Extensions.Configuration.EnvironmentVariables.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=10.0.0.13, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.10.0.13\lib\net462\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=10.0.0.13, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Json.10.0.13\lib\net462\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=10.0.0.13, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.10.0.13\lib\net462\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=10.0.0.13, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.10.0.13\lib\net462\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=10.0.0.13, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.10.0.13\lib\net462\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=10.0.0.13, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.10.0.13\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.DocumentObjectModel-gdi, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\MigraDoc.DocumentObjectModel-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.Rendering-gdi, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\MigraDoc.Rendering-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="MigraDoc.RtfRendering-gdi, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\MigraDoc.RtfRendering-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp-gdi, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\PdfSharp-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="PdfSharp.Charting-gdi, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\PDFsharp-MigraDoc-gdi.1.50.5147\lib\net20\PdfSharp.Charting-gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Pipelines, Version=10.0.0.13, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Pipelines.10.0.13\lib\net462\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=10.0.0.13, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.10.0.13\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=10.0.0.13, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.10.0.13\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.3\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Datos\Connection\Conexion.cs" />
+    <Compile Include="Datos\Connection\ConfiguracionConexion.cs" />
+    <Compile Include="Datos\Repository\ArchivoRepository.cs" />
+    <Compile Include="Datos\Repository\BaseDatosRepository.cs" />
+    <Compile Include="Datos\Repository\AdministradorRepository.cs" />
+    <Compile Include="Datos\Repository\ConfiguracionRepository.cs" />
+    <Compile Include="Datos\Repository\DetalleClaveValorRepository.cs" />
+    <Compile Include="Datos\Repository\HistorialReclamoRepository.cs" />
+    <Compile Include="Datos\Repository\LogSistemaRepository.cs" />
+    <Compile Include="Datos\Repository\PartidaPresupuestariaRepository.cs" />
+    <Compile Include="Datos\Repository\PermisoRepository.cs" />
+    <Compile Include="Datos\Repository\PresupuestoRepository.cs" />
+    <Compile Include="Datos\Repository\ProveedorRepository.cs" />
+    <Compile Include="Datos\Repository\ReclamoPartidaRepository.cs" />
+    <Compile Include="Datos\Repository\ReclamoRepository.cs" />
+    <Compile Include="Datos\Repository\RolRepository.cs" />
+    <Compile Include="Datos\Repository\SeguridadRepository.cs" />
+    <Compile Include="Datos\Repository\TokenRecuperacionRepository.cs" />
+    <Compile Include="Datos\Repository\UsuarioRepository.cs" />
+    <Compile Include="Datos\Repository\VecinoRepository.cs" />
+    <Compile Include="Negocio\Models\Archivo.cs" />
+    <Compile Include="Negocio\Models\Configuracion.cs" />
+    <Compile Include="Negocio\Models\DetalleClaveValor.cs" />
+    <Compile Include="Negocio\Models\HistorialReclamo.cs" />
+    <Compile Include="Negocio\Models\HistorialReclamoDTO.cs" />
+    <Compile Include="Negocio\Models\LogSistema.cs" />
+    <Compile Include="Negocio\Models\PartidaPresupuestaria.cs" />
+    <Compile Include="Negocio\Models\Permiso.cs" />
+    <Compile Include="Negocio\Models\Presupuesto.cs" />
+    <Compile Include="Negocio\Models\Proveedor.cs" />
+    <Compile Include="Negocio\Models\Reclamo.cs" />
+    <Compile Include="Negocio\Models\ReclamoDetalleDTO.cs" />
+    <Compile Include="Negocio\Models\ReclamoFiltro.cs" />
+    <Compile Include="Negocio\Models\ReclamoListado.cs" />
+    <Compile Include="Negocio\Models\ReclamoPartida.cs" />
+    <Compile Include="Negocio\Models\ReclamoPriorizacionDTO.cs" />
+    <Compile Include="Negocio\Models\Rol.cs" />
+    <Compile Include="Negocio\Models\RolPermiso.cs" />
+    <Compile Include="Negocio\Models\TokenRecuperacion.cs" />
+    <Compile Include="Negocio\Models\usuario.cs" />
+    <Compile Include="Negocio\Models\UsuarioPermiso.cs" />
+    <Compile Include="Negocio\Models\UsuarioRol.cs" />
+    <Compile Include="Negocio\Models\Vecino.cs" />
+    <Compile Include="Negocio\Models\PermisoUsuario.cs" />
+    <Compile Include="Negocio\Security\CalcularHashSOLOPARAPRUBEAS.cs" />
+    <Compile Include="Negocio\Security\Integridad.cs" />
+    <Compile Include="Negocio\Security\HashHelper.cs" />
+    <Compile Include="Negocio\Security\Permisos.cs" />
+    <Compile Include="Negocio\Security\ProteccionFormulario.cs" />
+    <Compile Include="Negocio\Security\SesionActual.cs" />
+    <Compile Include="Negocio\Services\ArchivoService.cs" />
+    <Compile Include="Negocio\Services\BaseDatosService.cs" />
+    <Compile Include="Negocio\Services\AdministradorService.cs" />
+    <Compile Include="Negocio\Services\ConfiguracionService.cs" />
+    <Compile Include="Negocio\Services\DetalleClaveValorService.cs" />
+    <Compile Include="Negocio\Services\EmailService.cs" />
+    <Compile Include="Negocio\Services\HistorialReclamoService.cs" />
+    <Compile Include="Negocio\Services\LogSistemaService.cs" />
+    <Compile Include="Negocio\Services\PartidaPresupuestariaService.cs" />
+    <Compile Include="Negocio\Services\PermisoService.cs" />
+    <Compile Include="Negocio\Services\PresupuestoService.cs" />
+    <Compile Include="Negocio\Services\ProveedorService.cs" />
+    <Compile Include="Negocio\Services\ReclamoPartidaService.cs" />
+    <Compile Include="Negocio\Services\ReclamoService.cs" />
+    <Compile Include="Negocio\Services\RecuperacionService.cs" />
+    <Compile Include="Negocio\Services\RolService.cs" />
+    <Compile Include="Negocio\Services\SeguridadService.cs" />
+    <Compile Include="Negocio\Services\TokenRecuperacionService.cs" />
+    <Compile Include="Negocio\Services\UsuarioService.cs" />
+    <Compile Include="Negocio\Services\VecinoService.cs" />
+    <Compile Include="Presentacion\Idiomas\Traductor.cs" />
+    <Compile Include="Presentacion\Reportes\ReporteReclamosPdf.cs" />
+    <Compile Include="Presentacion\Components\Sidebar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Components\Sidebar.Designer.cs">
+      <DependentUpon>Sidebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Components\Header.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Components\Header.Designer.cs">
+      <DependentUpon>Header.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormAdministrador.Designer.cs">
+      <DependentUpon>FormAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormValidarCodigo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormValidarCodigo.Designer.cs">
+      <DependentUpon>FormValidarCodigo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormRecuperarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormRecuperarContraseña.Designer.cs">
+      <DependentUpon>FormRecuperarContraseña.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormDetallePartida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormDetallePartida.Designer.cs">
+      <DependentUpon>FormDetallePartida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormDetalleProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormDetalleProveedor.Designer.cs">
+      <DependentUpon>FormDetalleProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormNuevoReclamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormNuevoReclamo.Designer.cs">
+      <DependentUpon>FormNuevoReclamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormPermisosUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormPermisosUsuario.Designer.cs">
+      <DependentUpon>FormPermisosUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormConfigurarBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormConfigurarBD.Designer.cs">
+      <DependentUpon>FormConfigurarBD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormCambiarPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormCambiarPassword.Designer.cs">
+      <DependentUpon>FormCambiarPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormDetalleUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormDetalleUsuario.Designer.cs">
+      <DependentUpon>FormDetalleUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormDetalleReclamo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormDetalleReclamo.Designer.cs">
+      <DependentUpon>FormDetalleReclamo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormInicioReclamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormInicioReclamos.Designer.cs">
+      <DependentUpon>FormInicioReclamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormHistorial.Designer.cs">
+      <DependentUpon>FormHistorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormPresupuesto.Designer.cs">
+      <DependentUpon>FormPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormVerificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormVerificacion.Designer.cs">
+      <DependentUpon>FormVerificacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormPriorizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormPriorizacion.Designer.cs">
+      <DependentUpon>FormPriorizacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormPartidas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormPartidas.Designer.cs">
+      <DependentUpon>FormPartidas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormLogs.Designer.cs">
+      <DependentUpon>FormLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormUsuarios.Designer.cs">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormConfiguracion.Designer.cs">
+      <DependentUpon>FormConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormProveedores.Designer.cs">
+      <DependentUpon>FormProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Forms\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Presentacion\Components\Sidebar.resx">
+      <DependentUpon>Sidebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Components\Header.resx">
+      <DependentUpon>Header.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormAdministrador.resx">
+      <DependentUpon>FormAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormCambiarPassword.resx">
+      <DependentUpon>FormCambiarPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormConfiguracion.resx">
+      <DependentUpon>FormConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormDetallePartida.resx">
+      <DependentUpon>FormDetallePartida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormDetalleProveedor.resx">
+      <DependentUpon>FormDetalleProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormDetalleReclamo.resx">
+      <DependentUpon>FormDetalleReclamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormDetalleUsuario.resx">
+      <DependentUpon>FormDetalleUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormHistorial.resx">
+      <DependentUpon>FormHistorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormInicioReclamos.resx">
+      <DependentUpon>FormInicioReclamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormLogs.resx">
+      <DependentUpon>FormLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormNuevoReclamo.resx">
+      <DependentUpon>FormNuevoReclamo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormPartidas.resx">
+      <DependentUpon>FormPartidas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormPermisosUsuario.resx">
+      <DependentUpon>FormPermisosUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormPresupuesto.resx">
+      <DependentUpon>FormPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormPriorizacion.resx">
+      <DependentUpon>FormPriorizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormProveedores.resx">
+      <DependentUpon>FormProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormRecuperarContraseña.resx">
+      <DependentUpon>FormRecuperarContraseña.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormUsuarios.resx">
+      <DependentUpon>FormUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormValidarCodigo.resx">
+      <DependentUpon>FormValidarCodigo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Forms\FormVerificacion.resx">
+      <DependentUpon>FormVerificacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Content Include="Resources\Geo\lomas_de_zamora.geojson">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Datos\DataBase\DER\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Datos\DataBase\Scripts\PozosYa.sql" />
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Datos\DataBase\Scripts\PozosYa_Demo.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\69c3ebc5510da3e81318f7fb6645aeea.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets" Condition="Exists('..\packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets'))" />
+  </Target>
+</Project>
